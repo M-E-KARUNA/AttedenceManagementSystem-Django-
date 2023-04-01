@@ -1,0 +1,22 @@
+{
+    "notebook.outputFontSize": 10,
+    "notebook.outputLineHeight": 30,
+    "editor.fontSize": 17,
+    "editor.tabSize": 4,
+    "editor.accessibilityPageSize": 20,
+    "screencastMode.fontSize": 56,
+    "screencastMode.mouseIndicatorSize": 20,
+    "notebook.markup.fontSize": 20,
+    "terminal.integrated.lineHeight": 1,
+    "terminal.integrated.fontSize": 16,
+    "scm.inputFontSize": 13,
+    "diffEditor.maxFileSize": 50,
+    "editor.codeLensFontSize": 0,
+    "editor.inlayHints.fontSize": 0,
+    "editor.minimap.size": "proportional",
+    "editor.scrollbar.horizontalScrollbarSize": 12,
+    "editor.scrollbar.verticalScrollbarSize": 10,
+    "editor.lineHeight": 0,
+    "explorer.openEditors.minVisible": 0,
+    "explorer.openEditors.visible": 9
+}

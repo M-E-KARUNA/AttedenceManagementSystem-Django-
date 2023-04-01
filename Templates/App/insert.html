@@ -1,0 +1,14 @@
+{% extends 'App/use.html' %}
+{% block title %}
+INSERTION 
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'insert' %}" method="POST">
+{% csrf_token %}
+name<input type='text' name='name'><br>
+mark<input type='number' name='mark'><br>
+<input type="submit">
+
+</form> 
+{% endblock %}

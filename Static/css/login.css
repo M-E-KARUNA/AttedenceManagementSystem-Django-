@@ -1,0 +1,141 @@
+
+html,body{
+height:100%;
+width:100%;
+}
+body{
+background-repeat:no-repeat;
+
+}
+.login{
+box-sizing:border-box;
+position:absolute;
+height:80%;
+width:90%;
+top:10%;
+left:5%;
+border:1px solid rgb(255,255,255);
+border-radius:20px;
+overflow:hidden;
+
+}
+
+input{
+position:absolute;
+top:30%;
+left:8%;
+width:80%;
+height:40%;
+border:1px solid rgb(255,255,255,1.0);
+border-width:2px;
+}
+label{
+display:block;
+font-size:10px;
+position:absolute;
+top:40%;
+left:10%;
+height:30%;
+width:80%;
+transition-delay:1.5s;
+transition-duration: 1s;
+color:white;
+z-index:1;
+
+}
+body:hover label{
+color:black;
+
+
+}
+.out{
+position:absolute;
+border:1px solid red;
+height:11%;
+width:40%;
+top:40%;
+left:30%;
+border:1px solid rgb(255,255,255);
+border-radius:20px;
+overflow:hidden;
+}
+.out::before{
+content:"";
+background:linear-gradient(to right,rgb(30, 181, 58),rgb(34, 66, 85));
+height:100%;
+width:100%;
+position:absolute;
+left:-100%;
+transition:1.2s;
+transition-delay:0.95s;
+
+}
+body:hover .out::before{
+left:0%;
+}
+.m{
+transition:3s;
+transition-timing-function:linear;
+border-radius:4px;
+background:linear-gradient(to right,rgb(34, 66, 85),rgb(30, 181, 58));
+position:absolute;
+height:1%;
+width:0%;
+top:45%;
+border:1px solid navy;
+
+display:hidden;
+
+}
+body:hover .m{
+width:100%;
+
+}
+.button{
+position:absolute;
+top:70%;
+left:43%;
+height:5%;
+width:15%;
+border:1px solid #552;
+border-width:2px;
+background-color:rgb(34, 66, 85);
+color:rgb(30, 181, 58);
+letter-spacing:2px;
+border-radius:10px;
+
+}
+h1{
+height:5%;
+box-sizing:border-box;
+text-align:center;
+color:rgb(74, 203, 27);
+letter-spacing:2px;
+word-spacing:5px;
+border:1px solid rgb(34,66,85);
+transition:0.5s;
+}
+h1::before{
+box-sizing:border-box;
+transition:2s;
+content:"";
+position:absolute;
+top:1%;
+left:0%;
+height:8%;
+width:100%;
+background-color:white;
+
+}
+body:hover h1::before, body:hover .button::before{
+display:none;
+}
+.button::before{
+content:"";
+height:120%;
+position:absolute;
+top:-10%;
+left:-10%;
+width:120%;
+background-color:white;
+}

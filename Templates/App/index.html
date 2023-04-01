@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+</html>
+<head>
+</head>
+<body>
+<table>
+<tr><td>NAME</td>
+<td>MARK</td></tr>
+{% for st in data %}
+<tr>
+<td>{{st.name}}</td>
+<td>{{st.mark}}</td>
+<td><a href="/App/update_form/{{st.id}}"><button type="button">update</button></a></td>
+<td><a href="/App/delete/{{st.id}}" ><button type="button">delete</button></a></td>
+</tr>
+{% endfor %}
+
+</table>
+<a href="/App/insert_form/"><button type="button">insert</button></a>
+</body>
+</html>

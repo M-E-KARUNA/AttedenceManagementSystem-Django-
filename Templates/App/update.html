@@ -1,0 +1,14 @@
+{% extends 'App/use.html' %}
+{% block title %}
+UPDATION
+{% endblock %}
+
+{% block content %}
+<form action="/App/update_form/{{st.id}}" method="POST">
+{% csrf_token %}
+name<input type='text' name='name' value="{{st.name}}"><br>
+mark<input type='number' name='mark' value="{{st.mark}}"><br>
+<input type="submit">
+
+</form> 
+{% endblock %}

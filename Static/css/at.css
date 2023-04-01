@@ -1,0 +1,56 @@
+.at{
+position:absolute;
+top: 8%;
+right:0%;
+width: 0.5%;
+height:10%;
+border:1px solid black;
+display:flex;     
+justify-content:center;
+transition:0.5s;
+}
+#mylist{
+height:20%;}
+.at:hover{
+width: 10%;
+height:15%;
+}
+.at:hover select{
+opacity:1;
+}
+.at select{
+width:80%;
+opacity:0;
+}
+
+
+#li{
+width:40%;
+margin:0px auto;
+border:1px solid black;
+list-style-type:none;
+
+}
+#li p{
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+gap:10px;
+}
+#li #bu{
+position:relative;
+bottom:2px;
+left:45%;
+border:1px solid green; 
+height:35px;
+width:60px;
+border-radius:5px;
+font-size:17px;
+letter-spacing: 1px;
+text-align:center;  
+font-style:bold;
+font-weight:bold;
+color:green;
+border-width:4px;
+
+}

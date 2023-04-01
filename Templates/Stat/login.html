@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<script src="{% static 'js/login.js' %}">
+</script>
+</head>
+
+<body>
+<h1>ATTEDENCE STATISTICS</h1>
+<div class="m" >
+</div>
+
+<form action="" method="POST" autocomplete="off" >
+{% csrf_token %} 
+<div class="out">
+<div class="login">
+<label id="move" onmouseover="movement()">Enter Your Roll No.
+</label>
+<input type='text' name='roll' id="a">
+</div>
+</div>
+<div id="rotate">
+</div>
+<input type="submit" value="Go" class="button">
+</form>
+</body>
+</html>

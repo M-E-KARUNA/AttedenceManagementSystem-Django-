@@ -1,0 +1,11 @@
+
+<div class='container'>
+{% for branches in branch %}
+<div id="a{{forloop.counter}}">
+<label>
+{{branches}}
+</label >
+<a href="/Stat/admin/{{branches}}/{{stbranch}}"><i class="gg-arrow-right-r"></i></a>
+</div>
+{% endfor %}
+</div>
