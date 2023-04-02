@@ -31,7 +31,8 @@ xhttp.send()
 function sendData(){
 var xhttp=new XMLHttpRequest()
 xhttp.onload=function(){
-window.alert(this.responseText);
+var msg=JSON.parse(this.responseText).msg;
+window.alert(msg);
 }
 xhttp.open('GET','/Stat/updateData/?data='+val+'&tb='+tb+'&subject='+subject,true)
 xhttp.send()

@@ -26,7 +26,6 @@ def login(r):
 
         del st_data1['id']
         sub=list(st_data1.keys())
-        print(sub,123)
         st_data2=OE.objects.filter(roll=r.POST['roll']).values()[0]
         sub.append(str(st_data2['oesubject'])) 
         st_data1[st_data2['oesubject']]=st_data2['oeat']
@@ -47,6 +46,7 @@ def login(r):
 
 
 def branch(r):
+    
     res=render(r,'Stat/branch.html',context={'branch':branches,'year':''})
     return res
 def admin(r,dept): 
@@ -136,10 +136,12 @@ def find(r):
     per=float(r.GET['per'])
 
     t_at=0
-    dt=tables[y.get(rono[:2])+d.get(rono[-3])].objects.filter(roll=rono).values()[0]
+    #y.get(rono[:2])+d.get(rono[-3])
+    dt=tables['ThirdCSE'].objects.filter(roll=rono).values()[0]
     if sub in dt.keys():
         t_at=dt[sub]
     else:
+        
         t_at=OE.objects.filter(roll=rono).values()[0]['oeat']
         
     t_pt=t_at.count('1')
@@ -154,10 +156,16 @@ def find(r):
 def at_list(r):
     sub=r.GET['sub']
     tb=r.GET['tb']
-    rolls=[x[0] for x in tables[tb].objects.values_list('roll')]
-    at=list(tables[tb].objects.values_list(sub))
-    at=[x[0].count('1') for x in at]
-    print("in");
+    try:  
+        rolls=[x[0] for x in tables[tb].objects.values_list('roll')]
+        at=list(tables[tb].objects.values_list(sub))
+        at=[x[0].count('1') for x in at]
+    except:
+        rolls=[x[0] for x in OE.objects.values_list('roll')]
+        print('here',rolls);
+        at=list(OE.objects.values_list('oeat'))
+        at=[x[0].count('1') for x in at]
+
     return JsonResponse({'rolls':rolls,'at':at})
 def updateData(r):
     import sqlite3
@@ -167,9 +175,11 @@ def updateData(r):
     con=sqlite3.connect('db.sqlite3')
     co=con.cursor()
     rolls=co.execute('select roll from Stat_thirdcse')
+    if sub=='robotics':
+        return HttpResponse('try different options');
     for x,y in enumerate(dt,1):
-        co.execute('update Stat_'+table.lower()+' set '+sub+'='+sub+'||? where id=?',(y,x))
         
+        co.execute('update Stat_'+table.lower()+' set '+sub+'='+sub+'||? where id=?',(y,x))
     con.commit();    
     return HttpResponse('success');
            
